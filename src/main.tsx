@@ -11,8 +11,9 @@ import { Routes, Route } from 'react-router-dom';
 
 function App(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
   return (
-    <div className="text-center bg-slate-900 text-white min-h-screen">
+    <div className="text-center bg-slate-900 text-white min-h-screen min-w-screen">
       <T.NavBar> </T.NavBar>
+      <T.SideBar> </T.SideBar>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
