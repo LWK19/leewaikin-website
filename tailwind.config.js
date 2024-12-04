@@ -3,8 +3,11 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['Tw Cen Mt Std', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+    },
+    container: {
+      center: true,
     },
     extend: {
       screens: {
@@ -14,6 +17,11 @@ module.exports = {
         xl: '1440px',
       },
       colors: {
+        "black": '#07060D',
+        "bg-main": "#161426",
+        "bg-elevate": "#363440",
+        "accent1": "#4D87F5",
+        "white": "#F2EFF1"
       },
       
       spacing: {

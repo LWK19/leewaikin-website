@@ -6,12 +6,14 @@ import * as T from '../template.tsx';
 function Contact(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
         <T.Content>
-            <div className="pt-4 w-full text-5xl">
-                Contact Me
-            </div>
-            <div className="p-4"> 
-                In Progress
-            </div>
+            <T.Section>
+                <T.Title>
+                    Contact Me
+                </T.Title>
+                <T.SectionContent>
+                    Email
+                </T.SectionContent>
+            </T.Section>
         </T.Content>
         
     );
