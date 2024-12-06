@@ -4,8 +4,13 @@ import * as T from '../template.tsx';
 
 
 function Contact(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
     return (
-        <T.Content>
+        <>
             <T.Section>
                 <T.Title>
                     Contact Me
@@ -14,7 +19,7 @@ function Contact(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>)
                     Email
                 </T.SectionContent>
             </T.Section>
-        </T.Content>
+        </>
         
     );
 }

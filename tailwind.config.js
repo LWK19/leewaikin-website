@@ -33,6 +33,9 @@ module.exports = {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-view-transitions"),
+
+  ],
 }
 

@@ -4,8 +4,13 @@ import * as T from '../template.tsx';
 
 
 function Experience(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
     return (
-        <T.Content>
+        <>
             <T.Section>
                 <T.Title>
                     My Work Experience
@@ -39,7 +44,7 @@ function Experience(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement
                     </T.Timeline>
                 </T.SectionContent>
             </T.Section>
-        </T.Content>
+        </>
         
     );
 }

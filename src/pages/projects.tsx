@@ -4,8 +4,14 @@ import * as T from '../template.tsx';
 
 
 function Projects(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
+      
     return (
-        <T.Content>
+        <>
             <T.Section>
                 <T.Title>
                     My Projects
@@ -55,7 +61,7 @@ function Projects(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Project Description
                 </T.SectionContent>
             </T.Section>
-        </T.Content>
+        </>
         
     );
 }

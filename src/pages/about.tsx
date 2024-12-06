@@ -5,12 +5,17 @@ import p1 from "../assets/p1.jpg";
 import nus from "../assets/nus.png";
 
 function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
-    function scrollTo() {
-        console.log("pressed");
-        return undefined;
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
+
+    function scrollTo(elementId: string) {
+        document.getElementById(elementId)?.scrollIntoView();
     }
     return (
-        <T.Content>
+        <>
             <T.Section>
                 <T.Title>
                     About Me
@@ -19,7 +24,7 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                     <T.Box>
                         <T.BoxHeader className='h-1/2'> <img className="rounded-t-4xl object-cover w-full h-full object-[0_-15px]" src={p1} alt=""/> </T.BoxHeader>
                         <T.BoxContent className="mt-5"> I am currently a Year 2 Computer Science student studying at NUS. </T.BoxContent>
-                        <T.Button className="" onClick={scrollTo}> More... </T.Button>
+                        <T.Button className="" onClick={() => scrollTo("education")}> More... </T.Button>
                     </T.Box>
                     <T.Box>
                         <T.BoxTitle> Education </T.BoxTitle>
@@ -32,7 +37,7 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                                 Bachelor's in Computing <br/> (Computer Science)
                             </div>
                         </T.BoxContent>
-                        <T.Button className="" onClick={scrollTo}> More... </T.Button>
+                        <T.Button className="" onClick={() => scrollTo("education")}> More... </T.Button>
                     </T.Box>
                     <T.Box>
                         <T.BoxTitle> My Skills </T.BoxTitle>
@@ -43,11 +48,11 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                             <T.Tag> C / C++ </T.Tag>
                             <T.Tag> Python </T.Tag>
                         </T.BoxContent>
-                        <T.Button className="" onClick={scrollTo}> More... </T.Button>
+                        <T.Button className="" onClick={() => scrollTo("skills")}> More... </T.Button>
                     </T.Box>
                 </T.BoxContainer>
             </T.Section>
-            <T.Section>
+            <T.Section id="education">
                 <T.SectionHeader> Education </T.SectionHeader>
                 <T.SectionContent>
                     <T.Timeline>
@@ -84,11 +89,11 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                 </T.SectionContent>
             </T.Section>
 
-            <T.Section>
+            <T.Section id="skills">
                 <T.SectionHeader> Skillset </T.SectionHeader>
                 <T.SectionContent> In Progress </T.SectionContent>
             </T.Section>
-        </T.Content>
+        </>
     );
 }
 

@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.content-enter {
+    opacity: 0;
+}
+
+.content-enter-active {
+    opacity: 1;
+    transition: ease-out 300ms;
+}
+.content-exit {
+    opacity: 1;
+}
+
+.content-exit-active {
+    opacity: 0;
+    transition: ease-in 300ms;
+}
