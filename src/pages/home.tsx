@@ -1,6 +1,6 @@
 import '../main.css';
 import React from 'react';
-import * as T from '../template.tsx';
+//import * as T from '../template.tsx';
 
 
 function Home(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
