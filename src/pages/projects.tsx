@@ -17,6 +17,7 @@ function Projects(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     My Projects
                 </T.Title>
                 <T.SectionContent>
+                    {/* TODO change to same layout as experience, but have extra section detailing projects */}
                     <T.Timeline>
                         <T.Date>Present</T.Date>
                         <T.Entry> </T.Entry>

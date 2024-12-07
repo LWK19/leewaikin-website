@@ -103,7 +103,7 @@ export function Footer(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElem
 
 export function Content(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
-        <div className="grow items-center">
+        <div className="grow items-center flex flex-col">
             {props.children}
         </div>
         
@@ -159,8 +159,8 @@ export function BoxContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDiv
 
 export function Button(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="group mb-5 mr-7 place-items-end hover:cursor-pointer">
-            <div className="block content-center text-2xl rounded-lg bg-accent1 min-w-24 min-h-10 text-black shadow-md shadow-black group-hover:text-white group-hover:mix-blend-hard-light transition-all" onClick={props.onClick}>
+        <div className={"mb-5 mr-7 place-items-end "+props.className}>
+            <div className="block content-center text-2xl rounded-lg bg-accent1 min-w-24 min-h-10 text-black shadow-md shadow-black hover:text-white hover:mix-blend-hard-light transition-all duration-75 hover:cursor-pointer" onClick={props.onClick}>
                 {props.children}
             </div>
         </div>
@@ -186,7 +186,7 @@ export function SectionHeader(props:React.PropsWithChildren<React.HTMLProps<HTML
 
 export function SectionContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="text-xl">
+        <div className="text-xl w-full justify-items-center">
             {props.children}
         </div>
     )
@@ -239,7 +239,9 @@ export function BulletPoint(props:React.PropsWithChildren<React.HTMLProps<HTMLDi
     return (
         <div className="text-left flex">
             <div className="pr-2"> - </div>
-            {props.children}
+            <div>
+                {props.children}
+            </div>
         </div>
     )
 }
