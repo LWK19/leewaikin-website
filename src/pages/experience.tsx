@@ -4,6 +4,7 @@ import * as T from '../template.tsx';
 
 
 function Experience(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    document.title = "Work Experience - Lee Wai Kin";
     window.scrollTo({
         top: 0,
         left: 0,
@@ -16,36 +17,92 @@ function Experience(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement
                     My Work Experience
                 </T.Title>
                 <T.SectionContent>
-                    <T.Timeline>
-                        <T.Date>Present</T.Date>
-                        <T.Entry> </T.Entry>
-                        {/* TODO timeline does not work for this. create new sections. prob easiest to start*/}
-                        <T.TimelineLine/>
-                        <T.Entry> 
-                            <T.Paragraph>
-                                <div>National University of Singapore (NUS)</div>
-                                <T.BulletPoint>
-                                    Teaching Assistant 
-                                </T.BulletPoint>
-                                <T.BulletPoint>
-                                Graded and provided feedback on student assignments and conducted weekly tutorial sessions for CS1101S  
-                                </T.BulletPoint> 
-                            </T.Paragraph>
-                        </T.Entry>
-                        <T.Date>2023</T.Date>
-                        <T.Entry></T.Entry>
-                        <T.TimelineLine/>
-                        <T.Entry><T.Paragraph>
-                                <div>Private Tuition</div>
-                                <T.BulletPoint>
-                                Taught several Junior College (JC) level students in the subjects of IBDP Physics and Chemistry
-                                </T.BulletPoint> 
-                                <T.BulletPoint>
-                                    In Progress
-                                </T.BulletPoint> 
-                            </T.Paragraph></T.Entry>
-                        <T.Date>2018</T.Date>
-                    </T.Timeline>
+                    <T.BoxContainer>
+                        <T.Card className="">
+                            <T.CardImage className="">
+                                image here
+                            </T.CardImage>
+                            <T.CardContent className="">
+                                <T.CardHeader className="">
+                                    <T.CardTitle className="">
+                                        cybercemeteries
+                                    </T.CardTitle>
+                                    <T.CardDate className="">
+                                        2024 - Present
+                                    </T.CardDate>
+                                </T.CardHeader>
+                                <T.CardSubtitle className="">
+                                    Software Engineer (Intern)
+                                </T.CardSubtitle>
+                                <div className="text-left">
+                                    TBC  
+                                </div> 
+                            </T.CardContent>
+                        </T.Card>
+                        <T.Card className="">
+                            <T.CardImage className="">
+                                image here
+                            </T.CardImage>
+                            <T.CardContent className="">
+                                <T.CardHeader className="">
+                                    <T.CardTitle className="">
+                                        National University of Singapore
+                                    </T.CardTitle>
+                                    <T.CardDate className="">
+                                        2023 - Present
+                                    </T.CardDate>
+                                </T.CardHeader>
+                                <T.CardSubtitle className="">
+                                    Teaching Assistant
+                                </T.CardSubtitle>
+                                <div className="text-left">
+                                    Graded and provided feedback on student assignments and conducted weekly tutorial sessions for CS1101S  
+                                </div> 
+                            </T.CardContent>
+                        </T.Card>
+                        <T.Card className="">
+                            <T.CardImage className="">
+                                image here
+                            </T.CardImage>
+                            <T.CardContent className="">
+                                <T.CardHeader className="">
+                                    <T.CardTitle className="">
+                                        Private Tuition
+                                    </T.CardTitle>
+                                    <T.CardDate className="">
+                                        2023
+                                    </T.CardDate>
+                                </T.CardHeader>
+                                <T.CardSubtitle className="">
+                                    IBDP Physics and Chemistry Tutor
+                                </T.CardSubtitle>
+                                <div className="text-left">
+                                    Taught several Junior College (JC) level students in the subjects of IBDP Physics and Chemistry  
+                                </div> 
+                            </T.CardContent>
+                        </T.Card>
+                        <T.Card className="">
+                            <T.CardImage className="">
+                                image here
+                            </T.CardImage>
+                            <T.CardContent className="">
+                                <T.CardHeader className="">
+                                    <T.CardTitle className="">
+                                        Eye Level Tuition Centre
+                                    </T.CardTitle>
+                                    <T.CardDate className="">
+                                        2018
+                                    </T.CardDate>
+                                </T.CardHeader>
+                                <T.CardSubtitle className="">
+                                    English Tutor
+                                </T.CardSubtitle>
+                                <div className="text-left">
+                                    Taught English to classes of 6 – 12-year-olds in a tuition centre and graded students’ homework  
+                                </div> 
+                            </T.CardContent>
+                        </T.Card>
+                    </T.BoxContainer>
                 </T.SectionContent>
             </T.Section>
         </>

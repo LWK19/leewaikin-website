@@ -112,7 +112,7 @@ export function Content(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEle
 
 export function Title(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
-        <div className="pt-5 pb-16 w-full text-5xl">
+        <div className="pb-5 w-full text-6xl">
             {props.children}
         </div>
     )
@@ -121,7 +121,7 @@ export function Title(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEleme
 // Content
 export function BoxContainer(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
-        <div className="flex w-full flex-wrap flex-col justify-center content-center h-auto lg:flex-row gap-x-[100px]">
+        <div className="flex w-full flex-wrap flex-col justify-center content-center h-auto items-center lg:flex-row gap-x-[100px]">
             {props.children}
         </div>
     ) 
@@ -129,7 +129,7 @@ export function BoxContainer(props:React.PropsWithChildren<React.HTMLProps<HTMLD
 
 export function Box(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="w-[400px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 h-[450px] flex flex-col">
+        <div className={"w-[400px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 min-h-[450px] h-full flex " + props.className}>
             {props.children} 
         </div>
     )
@@ -151,7 +151,7 @@ export function BoxHeader(props:React.PropsWithChildren<React.HTMLProps<HTMLDivE
 }
 export function BoxContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className={"text-2xl p-2 grow content-center " + props.className}>
+        <div className={"text-2xl p-5 grow content-center " + props.className}>
             {props.children}
         </div>
     )
@@ -178,7 +178,7 @@ export function Section(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEle
 
 export function SectionHeader(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="text-4xl border-b border-white w-3/4 mb-10">
+        <div className="text-5xl border-b border-white w-3/4 mb-10">
             {props.children}
         </div>
     )
@@ -248,7 +248,57 @@ export function BulletPoint(props:React.PropsWithChildren<React.HTMLProps<HTMLDi
 
 export function Tag(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="inline-block content-center text-2xl rounded-lg bg-emerald-900 min-w-24 min-h-10 text-white px-2 mb-5 mr-7 shadow-lg">
+        <div className="inline-block content-center text-2xl rounded-lg bg-emerald-900 min-w-24 min-h-10 text-white px-2 m-1 shadow-lg">
+            {props.children}
+        </div>
+    )
+}
+
+export function Card(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"w-full mx-20 flex-row h-min-[50px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 flex " + props.className}>
+            {props.children} 
+        </div>
+    )
+}
+export function CardImage(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"self-center min-w-[250px]" + props.className}>
+            {props.children} 
+        </div>
+    )
+}
+export function CardHeader(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"flex self-center" + props.className}>
+            {props.children} 
+        </div>
+    )
+}
+export function CardTitle(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"text-4xl grow text-left " + props.className}>
+            {props.children} 
+        </div>
+    )
+}
+export function CardSubtitle(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"justify-self-start text-3xl col-span-5 pb-10 " + props.className}>
+            {props.children} 
+        </div>
+    )
+}
+export function CardDate(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"text-2xl content-end" + props.className}>
+            {props.children} 
+        </div>
+    )
+}
+export function CardContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"text-2xl grow p-10 content-start" + props.className}>
             {props.children}
         </div>
     )

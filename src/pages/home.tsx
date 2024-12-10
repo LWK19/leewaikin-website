@@ -4,6 +4,8 @@ import React, { useEffect } from 'react';
 
 
 function Home(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    document.title = "Lee Wai Kin";
+    // TODO mobile mode
     function showAnimations() {
         document.getElementById("top-long-hori")!.style.width = "0";
         document.getElementById("top-vert")!.style.height = "0";

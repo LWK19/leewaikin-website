@@ -4,6 +4,7 @@ import * as T from '../template.tsx';
 
 
 function Contact(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    document.title = "Contact Me - Lee Wai Kin";
     window.scrollTo({
         top: 0,
         left: 0,
