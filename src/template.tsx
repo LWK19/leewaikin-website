@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useId} from 'react';
 import { Link } from 'react-router-dom';
 import './main.css';
 
@@ -84,7 +84,7 @@ export function SideBar(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEle
 
 export function CustomLink(props:React.PropsWithChildren<React.HTMLProps<HTMLAnchorElement>>){
     return (
-        <Link to={props.href!} className="group inline-block" onClick={props.onClick!} viewTransition> 
+        <Link to={props.href!} className="group inline-block" onClick={props.onClick!} viewTransition target={props.target}> 
             {props.children} 
             <span className="block w-0 group-hover:w-full transition-all h-0.5 bg-white"/>
         </Link>
@@ -121,7 +121,7 @@ export function Title(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEleme
 // Content
 export function BoxContainer(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
-        <div className="flex w-full flex-wrap flex-col justify-center content-center h-auto items-center lg:flex-row gap-x-[100px]">
+        <div className="flex w-full flex-wrap flex-col justify-center content-center h-auto items-start lg:flex-row gap-x-[100px]">
             {props.children}
         </div>
     ) 
@@ -129,7 +129,7 @@ export function BoxContainer(props:React.PropsWithChildren<React.HTMLProps<HTMLD
 
 export function Box(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className={"w-[400px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 min-h-[450px] h-full flex " + props.className}>
+        <div className={"w-[400px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 h-full flex " + props.className}>
             {props.children} 
         </div>
     )
@@ -164,7 +164,6 @@ export function Button(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElem
                 {props.children}
             </div>
         </div>
-        
     )
 }
 
@@ -186,7 +185,7 @@ export function SectionHeader(props:React.PropsWithChildren<React.HTMLProps<HTML
 
 export function SectionContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="text-xl w-full justify-items-center">
+        <div className={"text-xl w-full justify-items-center " + props.className}>
             {props.children}
         </div>
     )
@@ -248,7 +247,7 @@ export function BulletPoint(props:React.PropsWithChildren<React.HTMLProps<HTMLDi
 
 export function Tag(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className="inline-block content-center text-2xl rounded-lg bg-emerald-900 min-w-24 min-h-10 text-white px-2 m-1 shadow-lg">
+        <div className={"inline-block content-center text-2xl rounded-lg bg-emerald-900 min-h-10 text-white px-2 m-1 shadow-lg " + (props.className?.includes("min-w-")?"":"min-w-24 ") + props.className}>
             {props.children}
         </div>
     )
@@ -299,6 +298,59 @@ export function CardDate(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEl
 export function CardContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
         <div className={"text-2xl grow p-10 content-start" + props.className}>
+            {props.children}
+        </div>
+    )
+}
+
+export function ContentDivider(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    return (
+        <div className={"border-white border-b-[0.2px] w-1/2 h-0 opacity-50 my-10 " + props.className}/>
+    )
+}
+
+type DropDownProps = {Header:React.ReactNode, Content:React.ReactNode} & React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
+export function Collapsible(props:DropDownProps){
+    var hidden = true;
+    function toggle(){
+        if(hidden){
+            hidden=false;
+            const clientHeight = (ref.current?.childNodes[0] as HTMLElement)?.clientHeight.toString()
+            document.getElementById(contentId)!.style.height = clientHeight+"px";
+            document.getElementById(keyboardDownId)!.style.transform = "rotateX(180deg)";
+        } else{
+            hidden=true;
+            document.getElementById(contentId)!.style.height = "0";
+            document.getElementById(keyboardDownId)!.style.transform = "rotateX(0deg)";
+        }
+        
+    }
+    const ref = React.createRef<HTMLDivElement>()
+    const contentId = useId();
+    const keyboardDownId = useId();
+    return (
+        <div className={"first:mt-0 flex flex-col min-w-[50%] " + (props.className?.includes("m-")?"":"m-10 ") + props.className}>
+            <div className="flex flex-row">
+                <div className='grow text-left '>{props.Header}</div>
+                <i className="material-icons text-3xl mx-2 hover:cursor-pointer overflow-hidden origin-center transition-all h-auto" onClick={toggle} id={keyboardDownId}>keyboard_arrow_down</i>
+            </div>
+            <div ref={ref} className="h-0 overflow-hidden transition-[height]" id={contentId}>{props.Content}</div>
+        </div>
+    )
+}
+
+export function CollapsibleHeader(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    return (
+        <div className={"text-3xl " + props.className}>
+            {props.children}
+        </div>
+    )
+}
+
+export function CollapsibleContent(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
+    const ref = React.useRef<HTMLDivElement>(null);
+    return (
+        <div className={"" + props.className} ref={ref}>
             {props.children}
         </div>
     )

@@ -23,14 +23,20 @@ function App() {
     { path: '/contact', name: 'Contact', element: <Contact />, nodeRef: createRef()},
   ]
   const nodeRR = routes.find((route) => route.path === location.pathname)!
-
+  function scrollTop(){
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      })
+  };
   return (
     <div className="bg-bg-main">
       <div className=" text-center bg-bg-main text-white min-h-screen min-w-screen flex flex-col">
       <T.NavBar/>
       <T.SideBar/>
       <SwitchTransition>
-        <CSSTransition key={location.pathname} nodeRef={nodeRR.nodeRef} timeout={500} classNames='content' unmountOnExit>
+        <CSSTransition key={location.pathname} nodeRef={nodeRR.nodeRef} timeout={500} classNames='content' onEnter={scrollTop} unmountOnExit>
           {(state) => (
             <div ref={nodeRR.nodeRef} className='grow flex flex-col'>
               <T.Content>

@@ -5,11 +5,6 @@ import * as T from '../template.tsx';
 
 function Experience(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     document.title = "Work Experience - Lee Wai Kin";
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'instant',
-      });
     return (
         <>
             <T.Section>
@@ -56,8 +51,16 @@ function Experience(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement
                                     Teaching Assistant
                                 </T.CardSubtitle>
                                 <div className="text-left">
-                                    Graded and provided feedback on student assignments and conducted weekly tutorial sessions for CS1101S  
+                                    Graded and provided feedback on student assignments and conducted weekly tutorial sessions  
                                 </div> 
+                                <T.Collapsible className="m-0 " Header={<T.CollapsibleHeader>
+                                    <div className="mt-2 text-2xl text-left">Modules Taught</div>
+                                </T.CollapsibleHeader>} Content={<T.CollapsibleContent>
+                                    <div className="pt-2 ml-3 text-xl text-left">
+                                        CS1101S (AY24/25 Sem 1) <br/>
+                                        CS2109S (AY24/25 Sem 2)
+                                    </div>
+                                </T.CollapsibleContent>}/>
                             </T.CardContent>
                         </T.Card>
                         <T.Card className="">

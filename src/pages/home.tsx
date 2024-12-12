@@ -21,8 +21,8 @@ function Home(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     }
     useEffect(showAnimations)
     return (
-        <>
-            <div className="w-full text-9xl self-stretch content-center grow relative bg-black">
+        <div className="w-full text-9xl self-stretch content-center grow relative bg-black overflow-hidden">
+            <div className="scale-[0.25] sm:max-md:scale-50 md:max-lg:scale-75 lg:scale-100">
                 <div className="border-[3px] border-white origin-center rotate-[60deg] w-[55px] h-[0px] absolute top-[calc(50%-140px)] left-[calc(50%-298px)] translate-y-[-50%] translate-x-[-50%] z-[3]"/>
                 <div className="border-[3px] border-white origin-center rotate-[60deg] w-[55px] h-[0px] absolute top-[calc(50%-140px)] left-[calc(50%-268px)] translate-y-[-50%] translate-x-[-50%] z-[3]"/>
                 <div className="absolute w-[70px] h-[80px] top-[calc(50%-140px)] left-[calc(50%-283px)] translate-y-[-50%] translate-x-[-50%] bg-black z-[2]"/>
@@ -53,7 +53,7 @@ function Home(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                 </div>
                 
             </div>
-        </>
+        </div>
     );
 }
 

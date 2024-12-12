@@ -6,14 +6,11 @@ import nus from "../assets/nus.png";
 
 function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     document.title = "About - Lee Wai Kin";
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'instant',
-      });
 
     function scrollTo(elementId: string) {
+        document.documentElement.style.scrollBehavior = "smooth";
         document.getElementById(elementId)?.scrollIntoView();
+        document.documentElement.style.scrollBehavior = "";
     }
     return (
         <>
@@ -40,15 +37,17 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                         </T.BoxContent>
                         <T.Button className="" onClick={() => scrollTo("education")}> More... </T.Button>
                     </T.Box>
-                    <T.Box className="flex-col">
+                    <T.Box className="flex-col min-h-10">
                         <T.BoxTitle> Key Achievements </T.BoxTitle>
-                        <T.BoxContent> 
-                            ASEAN Undergraduate Merit Scholarship <br/><br/>
-                            NUS Dean's List
+                        <T.BoxContent>
+                            <ul className="list-disc mx-10 text-left flex flex-col gap-5">
+                                <li>ASEAN Undergraduate Merit Scholarship</li>
+                                <li>NUS Dean's List</li>    
+                            </ul> 
                         </T.BoxContent>
                         <T.Button className="" onClick={() => scrollTo("achievements")}> More... </T.Button>
                     </T.Box>
-                    <T.Box className="flex-col">
+                    <T.Box className="flex-col min-h-10">
                         <T.BoxTitle> My Skills </T.BoxTitle>
                         <T.BoxContent> 
                             <T.Tag> Javascript / Typescript </T.Tag>
@@ -66,8 +65,10 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
             </T.Section>
             <T.Section id="whoami">
                 <T.SectionHeader> Who am I?</T.SectionHeader>
-                <T.SectionContent>
-                    ...
+                <T.SectionContent className="">
+                    <div className="w-3/4 text-justify">
+                        A long self-introduction. A long self-introduction. A long self-introduction. A very long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. A long self-introduction. 
+                    </div>
                 </T.SectionContent>
             </T.Section>
             <T.Section id="education">
@@ -102,9 +103,16 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                             </T.Paragraph></T.Entry>
                         <T.Date>2017</T.Date>
                     </T.Timeline>
+                    
+                    <T.ContentDivider/>
+
                     <div className='w-1/2'>
                     <div className="text-3xl mt-10 text-left"> National University of Singapore</div>
-                    <div className='text-left'> CGPA: 5.0 / 5.0 (As of AY23/24 Semester 2) <br/> Modules Taken: </div>
+                    <div className='text-left'> CGPA: 5.0 / 5.0 (As of AY23/24 Semester 2)</div>
+
+                    <T.Collapsible className=" m-0" Header={<T.CollapsibleHeader className="text-xl">
+                        Modules Taken
+                    </T.CollapsibleHeader>}Content={<T.CollapsibleContent>
                     <div className="grid grid-cols-5 justify-self-center">
                         <div className="col-span-4 text-center">Module</div>
                         <div className="col-span-1">Grade</div>
@@ -151,13 +159,19 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                         <div className="col-span-1">S</div>
                          <br/>
                     </div>
+                    </T.CollapsibleContent>}/>
                     </div>
+
+                    <T.ContentDivider/>
+
                     <div className='w-1/2'>
                     <div className="text-3xl mt-10 text-left"> Anglo-Chinese School (Independent)
                     </div>
-                    <div className='text-left'> Points: 43/45
-                    <br/> Subject Combination: </div>
-                    <div className="grid grid-cols-5 justify-self-center">
+                    <div className='text-left'> Points: 43/45 </div>
+                    <T.Collapsible className=" m-0" Header={<T.CollapsibleHeader className="text-xl">
+                        Subject Combination
+                    </T.CollapsibleHeader>}Content={<T.CollapsibleContent>
+                        <div className="grid grid-cols-5 justify-self-center">
                         <div className="col-span-4 text-center">Subject</div>
                         <div className="col-span-1">Grade</div>
                         <div className="col-span-4 text-left">English A: Language and Literature (SL)
@@ -184,12 +198,37 @@ function About(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
                         <div className="col-span-4 text-left">Theory of Knowledge</div>
                         <div className="col-span-1">B</div>
                     </div>
+                    </T.CollapsibleContent>}/>
                     </div>
                 </T.SectionContent>
             </T.Section>
             <T.Section id="achievements">
                 <T.SectionHeader> Key Achievements </T.SectionHeader>
-                <T.SectionContent> In Progress </T.SectionContent>
+                <T.SectionContent> 
+                <T.Collapsible 
+                Header={<T.CollapsibleHeader>
+                    <T.CustomLink href="https://nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-permanent-residents/asean-undergraduate-scholarship" target="_blank">
+                        ASEAN Undergraduate Merit Scholarship
+                    </T.CustomLink>
+                </T.CollapsibleHeader>} 
+                Content={<T.CollapsibleContent>
+                    <div className="px-5 pt-5 h-auto text-left" >
+                        Recipient of the ASEAN Undergraduate Merit Scholarship from 2023-2027. 
+                        
+                    </div>
+                </T.CollapsibleContent>}/>
+                <T.Collapsible 
+                Header={<T.CollapsibleHeader>
+                    <T.CustomLink href="https://credentials.nus.edu.sg/f5dc0f96-4a70-49f0-bbba-6142b765947a#acc.V5SX1WA4" target="_blank">
+                        NUS Dean's List
+                    </T.CustomLink>
+                </T.CollapsibleHeader>} 
+                Content={<T.CollapsibleContent>
+                    <div className="p-10">
+                        <img className="m-auto" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/105927835" alt=""/>
+                    </div>
+                </T.CollapsibleContent>}/>
+                </T.SectionContent>
             </T.Section>
         </>
     );

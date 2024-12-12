@@ -5,11 +5,6 @@ import * as T from '../template.tsx';
 
 function Contact(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     document.title = "Contact Me - Lee Wai Kin";
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'instant',
-      });
     // TODO handle email logic
     return (
         <>
@@ -39,7 +34,7 @@ function Contact(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>)
                             <textarea
                                 id="inquiry"
                                 placeholder="Enter text here"
-                                className="block min-w-0 grow py-1.5 px-3 min-h-[200px] w-full rounded-md text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
+                                className="mt-2 block min-w-0 grow py-1.5 px-3 min-h-[200px] w-full rounded-md text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
                             />
                         </div>
                         <div className="mt-10">
