@@ -16,11 +16,11 @@ function App() {
   const location = useLocation();
   const currentOutlet = useOutlet();
   const routes = [
-    { path: '/', name: 'Home', element: <Home />, nodeRef: createRef() },
-    { path: '/about', name: 'About', element: <About />, nodeRef: createRef() },
-    { path: '/experience', name: 'Experience', element: <Experience />, nodeRef: createRef()},
-    { path: '/projects', name: 'Projects', element: <Projects />, nodeRef: createRef()},
-    { path: '/contact', name: 'Contact', element: <Contact />, nodeRef: createRef()},
+    { path: '/', name: 'Home', element: <Home />, nodeRef: createRef<HTMLDivElement>() },
+    { path: '/about', name: 'About', element: <About />, nodeRef: createRef<HTMLDivElement>() },
+    { path: '/experience', name: 'Experience', element: <Experience />, nodeRef: createRef<HTMLDivElement>()},
+    { path: '/projects', name: 'Projects', element: <Projects />, nodeRef: createRef<HTMLDivElement>()},
+    { path: '/contact', name: 'Contact', element: <Contact />, nodeRef: createRef<HTMLDivElement>()},
   ]
   const nodeRR = routes.find((route) => route.path === location.pathname)!
   function scrollTop(){
