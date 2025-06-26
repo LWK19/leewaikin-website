@@ -7,6 +7,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
     document.title = "Contact Me - Lee Wai Kin";
     const turnstileRef = React.useRef(null);
     const formRef = React.useRef(null);
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
     React.useEffect(() => {
     const renderWidget = () => {
@@ -15,18 +16,20 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
           sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
           size: "invisible",
           callback: () => {
-            formRef.current?.submit();
+            if (isSubmitting) {
+                formRef.current.submit();
+              }
           },
         });
       }
+    }, [isSubmitting]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        window.turnstile.execute(turnstileRef.current);
     };
-    
-    if (window.turnstile) {
-      renderWidget();
-    } else {
-      window.onload = renderWidget;
-    }
-    }, []);
+
 
     return (
         <>
@@ -35,11 +38,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" ref={formRef} method="POST" 
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          window.turnstile?.execute(turnstileRef.current);
-                        }}>
+                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" ref={formRef} method="POST" onSubmit={handleSubmit}>
                         <input
                             type="checkbox"
                             name="poohplate"
