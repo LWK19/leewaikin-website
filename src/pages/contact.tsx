@@ -47,7 +47,9 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                             />
                         </div>
                         <div className="mt-10">
-                            <T.Button className="place-items-center mr-0" type="submit"> Send </T.Button>
+                            <T.Button className="place-items-center mr-0"> 
+                                <button type="submit"> Send </button>    
+                            </T.Button>
                         </div>
                         <div className="mt-10"> (Page still in development) </div>
                     </form>
