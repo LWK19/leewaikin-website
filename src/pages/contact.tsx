@@ -12,7 +12,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
     React.useEffect(() => {
         if (window.turnstile && turnstileRef.current) {
           window.turnstile.render(turnstileRef.current, {
-            sitekey: 'your-site-key',
+            sitekey: '0x4AAAAAABiVNOJwVk6TLWep',
             size: 'invisible',
             callback: () => {
               if (isSubmitting) {
@@ -77,7 +77,6 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                                 <button type="submit"> Send </button>    
                             </T.Button>
                         </div>
-                        <div className="mt-10"> (Page still in development) </div>
                     </form>
                 </T.SectionContent>
             </T.Section>
