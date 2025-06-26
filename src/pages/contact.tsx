@@ -1,4 +1,4 @@
-import '../main.css';More actions
+import '../main.css';
 import * as T from '../template.tsx';
 import React, { useEffect, useRef, useState } from 'react';
 
