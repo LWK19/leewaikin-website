@@ -62,7 +62,7 @@ function ContactForm() {
         }
     };
 
-    return (More actions
+    return (
         <>
             <T.Section>
                 <T.Title>
