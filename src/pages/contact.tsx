@@ -5,7 +5,29 @@ import * as T from '../template.tsx';
 
 function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     document.title = "Contact Me - Lee Wai Kin";
-    // TODO handle email logic
+    const turnstileRef = useRef(null);
+    const formRef = useRef(null);
+
+    useEffect(() => {
+    const renderWidget = () => {
+      if (window.turnstile && turnstileRef.current) {
+        window.turnstile.render(turnstileRef.current, {
+          sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
+          size: "invisible",
+          callback: () => {
+            formRef.current?.submit();
+          },
+        });
+      }
+    };
+    
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      window.onload = renderWidget;
+    }
+    }, []);
+
     return (
         <>
             <T.Section>
@@ -13,7 +35,11 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" method="POST">
+                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" ref={formRef} method="POST" 
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          window.turnstile?.execute(turnstileRef.current);
+                        }}>
                         <input
                             type="checkbox"
                             name="poohplate"
@@ -46,7 +72,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                                 name="inquiry"
                             />
                         </div>
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABiVNOJwVk6TLWep"></div>
+                        <div ref={turnstileRef}></div>
                         <div className="mt-10">
                             <T.Button className="place-items-center mr-0"> 
                                 <button type="submit"> Send </button>    
