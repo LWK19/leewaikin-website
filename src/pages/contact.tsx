@@ -17,8 +17,8 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                         <input
                             type="checkbox"
                             name="poohplate"
-                            style="display:none"
-                            tabindex="-1"
+                            style={{ display: 'none' }} 
+                            tabIndex={-1}
                             autocomplete="off"
                           />
                         <div className="">
