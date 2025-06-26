@@ -5,10 +5,10 @@ import * as T from '../template.tsx';
 
 function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     document.title = "Contact Me - Lee Wai Kin";
-    const turnstileRef = useRef(null);
-    const formRef = useRef(null);
+    const turnstileRef = React.useRef(null);
+    const formRef = React.useRef(null);
 
-    useEffect(() => {
+    React.useEffect(() => {
     const renderWidget = () => {
       if (window.turnstile && turnstileRef.current) {
         window.turnstile.render(turnstileRef.current, {
