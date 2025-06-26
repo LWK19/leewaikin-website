@@ -13,7 +13,14 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl">
+                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS">
+                        <input
+                            type="checkbox"
+                            name="poohplate"
+                            style="display:none"
+                            tabindex="-1"
+                            autocomplete="off"
+                          />
                         <div className="">
                             <label className="w-fullblock text-3xl text-white ">
                                 Your Email
@@ -24,21 +31,23 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                                     type="email"
                                     placeholder="example@domain.com"
                                     className="block min-w-0 grow py-1.5 pl-1 pr-3 rounded-md text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
+                                    name="email"
                                 />
                             </div>
                         </div>
                         <div className="mt-10">
                             <label className="block text-3xl text-white ">
-                                Inquiry
+                                Message
                             </label>
                             <textarea
                                 id="inquiry"
                                 placeholder="Enter text here"
                                 className="mt-2 block min-w-0 grow py-1.5 px-3 min-h-[200px] w-full rounded-md text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
+                                name="inquiry"
                             />
                         </div>
                         <div className="mt-10">
-                            <T.Button className="place-items-center mr-0"> Send </T.Button>
+                            <T.Button className="place-items-center mr-0" type="submit"> Send </T.Button>
                         </div>
                         <div className="mt-10"> (Page still in development) </div>
                     </form>
