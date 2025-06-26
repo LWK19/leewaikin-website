@@ -46,6 +46,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                                 name="inquiry"
                             />
                         </div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABiVNOJwVk6TLWep"></div>
                         <div className="mt-10">
                             <T.Button className="place-items-center mr-0"> 
                                 <button type="submit"> Send </button>    
