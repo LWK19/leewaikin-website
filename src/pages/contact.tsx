@@ -10,7 +10,7 @@ function ContactForm() {
         const loadTurnstile = () => {
             if (window.turnstile && turnstileRef.current) {
                 const id = window.turnstile.render(turnstileRef.current, {
-                    sitekey: 'YOUR_SITE_KEY',
+                    sitekey: '0x4AAAAAABiVNOJwVk6TLWep',
                     size: 'invisible',
                     callback: (token) => {
                         setTurnstileToken(token);
