@@ -46,7 +46,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                                 name="inquiry"
                             />
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LciMm4rAAAAAA6wzLleYLgu4gOZ7oDSpjBPlJi3"></div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABiVNOJwVk6TLWep"></div>
                         <div className="mt-10">
                             <T.Button className="place-items-center mr-0"> 
                                 <button type="submit"> Send </button>    
