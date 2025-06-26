@@ -26,6 +26,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        window.turnstile.reset(turnstileRef.current);
         setIsSubmitting(true);
         window.turnstile.execute(turnstileRef.current);
     };
