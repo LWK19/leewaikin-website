@@ -2,20 +2,19 @@ import React, { useEffect, useRef, useState } from 'react';
 
 function ContactForm() {
     const turnstileRef = useRef(null);
+    const widgetIdRef = useRef(null); // Use ref instead of state
     const [turnstileToken, setTurnstileToken] = useState('');
-    const [widgetId, setWidgetId] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         const loadTurnstile = () => {
             if (window.turnstile && turnstileRef.current) {
                 const id = window.turnstile.render(turnstileRef.current, {
-                    sitekey: '0x4AAAAAABiVNOJwVk6TLWep',
+                    sitekey: 'YOUR_SITE_KEY',
                     size: 'invisible',
                     callback: (token) => {
                         setTurnstileToken(token);
                         setIsSubmitting(false);
-                        // Auto-submit after getting token
                         document.getElementById('contact-form').submit();
                     },
                     'error-callback': () => {
@@ -28,14 +27,13 @@ function ContactForm() {
                         setIsSubmitting(false);
                     }
                 });
-                setWidgetId(id);
+                widgetIdRef.current = id; // Store in ref
             }
         };
 
         if (window.turnstile) {
             loadTurnstile();
         } else {
-            // Wait for script to load
             const checkTurnstile = setInterval(() => {
                 if (window.turnstile) {
                     loadTurnstile();
@@ -44,24 +42,23 @@ function ContactForm() {
             }, 100);
         }
 
-        // Cleanup
+        // Cleanup - now using ref
         return () => {
-            if (widgetId !== null && window.turnstile) {
-                window.turnstile.remove(widgetId);
+            if (widgetIdRef.current !== null && window.turnstile) {
+                window.turnstile.remove(widgetIdRef.current);
             }
         };
-    }, []);
+    }, []); // Empty dependency array is now correct
 
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        if (isSubmitting) return; // Prevent double submission
-        
+        if (isSubmitting) return;
         setIsSubmitting(true);
         
-        // Execute invisible turnstile
-        if (widgetId !== null && window.turnstile) {
-            window.turnstile.execute(widgetId);
+        // Use ref here too
+        if (widgetIdRef.current !== null && window.turnstile) {
+            window.turnstile.execute(widgetIdRef.current);
         }
     };
 
