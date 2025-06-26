@@ -10,24 +10,24 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
     const [isSubmitting, setIsSubmitting] = React.useState(false);
 
     React.useEffect(() => {
-        if (window.turnstile && turnstileRef.current) {
-          window.turnstile.render(turnstileRef.current, {
-            sitekey: '0x4AAAAAABiVNOJwVk6TLWep',
-            size: 'invisible',
-            callback: () => {
-              if (isSubmitting) {
-                formRef.current.submit();
-              }
-            },
-          });
+    if (window.turnstile && turnstileRef.current) {
+        window.turnstile.render(turnstileRef.current, {
+          sitekey: '0x4AAAAAABiVNOJwVk6TLWep',
+          size: 'invisible',
+          callback: () => {
+            if (isSubmitting) {
+              formRef.current.submit();
+              setIsSubmitting(false);
+            }
+          },
+        });
         }
-    }, [isSubmitting]);
-
-
+    }, []);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.turnstile.reset(turnstileRef.current);
         setIsSubmitting(true);
+        window.turnstile.reset(turnstileRef.current);
         window.turnstile.execute(turnstileRef.current);
     };
 
