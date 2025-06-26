@@ -13,7 +13,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS">
+                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" method="POST">
                         <input
                             type="checkbox"
                             name="poohplate"
@@ -46,7 +46,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                                 name="inquiry"
                             />
                         </div>
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABiVNOJwVk6TLWep"></div>
+                        <div class="g-recaptcha" data-sitekey="6LciMm4rAAAAAA6wzLleYLgu4gOZ7oDSpjBPlJi3"></div>
                         <div className="mt-10">
                             <T.Button className="place-items-center mr-0"> 
                                 <button type="submit"> Send </button>    
