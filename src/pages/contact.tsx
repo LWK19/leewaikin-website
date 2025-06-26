@@ -22,6 +22,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
           },
         });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     const handleSubmit = (e) => {
