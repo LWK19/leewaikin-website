@@ -93,4 +93,4 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
 }
 
 
-export default ContactForm;
+export default Contact;
