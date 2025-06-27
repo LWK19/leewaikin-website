@@ -3,67 +3,32 @@ import '../main.css';
 import * as T from '../template.tsx';
 import React, { useEffect, useRef, useState } from 'react';
 
-function ContactForm() {
-    const turnstileRef = useRef(null);
-    const widgetIdRef = useRef(null); // Use ref instead of state
-    const [turnstileToken, setTurnstileToken] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
+function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
+    document.title = "Contact Me - Lee Wai Kin";
+    const turnstileRef = React.useRef(null);
+    const formRef = React.useRef(null);
 
-    useEffect(() => {
-        const loadTurnstile = () => {
-            if (window.turnstile && turnstileRef.current) {
-                const id = window.turnstile.render(turnstileRef.current, {
-                    sitekey: '0x4AAAAAABiVNOJwVk6TLWep',
-                    size: 'invisible',
-                    callback: (token) => {
-                        setTurnstileToken(token);
-                        setIsSubmitting(false);
-                        document.getElementById('contact-form').submit();
-                    },
-                    'error-callback': () => {
-                        setTurnstileToken('');
-                        setIsSubmitting(false);
-                        alert('Verification failed. Please try again.');
-                    },
-                    'expired-callback': () => {
-                        setTurnstileToken('');
-                        setIsSubmitting(false);
-                    }
-                });
-                widgetIdRef.current = id; // Store in ref
-            }
+    React.useEffect(() => {
+        const renderWidget = () => {
+          if (window.turnstile && turnstileRef.current) {
+            window.turnstile.render(turnstileRef.current, {
+              sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
+              size: "invisible",
+              callback: (token) => {
+                  console.log(token);
+                  alert("got token");
+                //formRef.current?.submit();
+              },
+            });
+          }
         };
-
+    
         if (window.turnstile) {
-            loadTurnstile();
+          renderWidget();
         } else {
-            const checkTurnstile = setInterval(() => {
-                if (window.turnstile) {
-                    loadTurnstile();
-                    clearInterval(checkTurnstile);
-                }
-            }, 100);
+          window.onload = renderWidget;
         }
-
-        // Cleanup - now using ref
-        return () => {
-            if (widgetIdRef.current !== null && window.turnstile) {
-                window.turnstile.remove(widgetIdRef.current);
-            }
-        };
-    }, []); // Empty dependency array is now correct
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        if (isSubmitting) return;
-        setIsSubmitting(true);
-        
-        // Use ref here too
-        if (widgetIdRef.current !== null && window.turnstile) {
-            window.turnstile.execute(widgetIdRef.current);
-        }
-    };
+    }, []);
 
     return (
         <>
@@ -72,11 +37,15 @@ function ContactForm() {
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" ref={formRef} method="POST" onSubmit={handleSubmit}>
+                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" ref={formRef} method="POST" 
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          window.turnstile?.execute(turnstileRef.current);
+                        }}>
                         <input
                             type="hidden"
                             name="_redirect"
-                            value="https:/leewaikin.com/contact"
+                            value="https://your-website.com/thanks"
                           />
                         <input
                             type="checkbox"
@@ -120,7 +89,6 @@ function ContactForm() {
                 </T.SectionContent>
             </T.Section>
         </>
-
     );
 }
 
