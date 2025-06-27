@@ -8,34 +8,23 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
     const turnstileRef = React.useRef(null);
     const formRef = React.useRef(null);
 
-    React.useEffect(() => {
-        const renderWidget = () => {
-          if (window.turnstile && turnstileRef.current) {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (window.turnstile && turnstileRef.current) {
             window.turnstile.render(turnstileRef.current, {
               sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
               size: "invisible",
               callback: (token) => {
                   console.log(token);
                   alert("got token");
-                //formRef.current?.submit();
               },
             });
-          }
-        };
-    
-        if (window.turnstile) {
-          renderWidget();
+            //console.log("Turnstile executing...");
+            //window.turnstile?.execute(turnstileRef.current);
+            console.log("Turnstile executed");
         } else {
-          window.onload = renderWidget;
+            alert("Error. Please reload the page.");
         }
-    }, []);
-      
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        //console.log("Turnstile executing...");
-        //window.turnstile?.execute(turnstileRef.current);
-        //console.log("Turnstile executed");
         
         const form = e.target;
         const formData = new FormData(form);
