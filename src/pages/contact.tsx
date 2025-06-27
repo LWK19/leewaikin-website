@@ -85,7 +85,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                         </div>
                         <div ref={turnstileRef}></div>
                         <div className="mt-10">
-                            <T.Button className={"place-items-center mr-0 " + (loading ? "brightness-75 cursor-not-allowed" : "hover:brightness-90"})> 
+                            <T.Button className={"place-items-center mr-0 " + (loading ? "brightness-75 cursor-not-allowed" : "hover:brightness-90")}> 
                                 <button type="submit" disabled={loading} > Send </button>    
                             </T.Button>
                         </div>
