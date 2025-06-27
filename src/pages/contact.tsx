@@ -61,7 +61,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl" ref={formRef} >
+                    <form className="w-1/2 max-w-[300px] text-xl" ref={formRef} onSubmit={handleSubmit} >
                         <input
                             type="checkbox"
                             name="poohplate"
