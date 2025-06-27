@@ -30,6 +30,30 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
         }
     }, []);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Turnstile executing...");
+        window.turnstile?.execute(turnstileRef.current);
+        console.log("Turnstile executed");
+        const form = e.target;
+        const data = {
+          email: form.email.value,
+          message: form.message.value,
+        };
+        
+        const res = await fetch('https://submit-form.com/aDceOXRPS', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        
+        if (res.ok) {
+          alert("ok")
+        } else {
+          alert('not ok');
+        }
+    };
+
     return (
         <>
             <T.Section>
@@ -37,11 +61,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     Contact Me
                 </T.Title>
                 <T.SectionContent>
-                    <form className="w-1/2 max-w-[300px] text-xl" action="https://submit-form.com/aDceOXRPS" ref={formRef} method="POST" 
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          window.turnstile?.execute(turnstileRef.current);
-                        }}>
+                    <form className="w-1/2 max-w-[300px] text-xl" ref={formRef} >
                         <input
                             type="hidden"
                             name="_redirect"
