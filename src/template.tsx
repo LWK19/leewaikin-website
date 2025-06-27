@@ -95,7 +95,7 @@ export function Footer(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElem
     return (
         <div className="bg-black bottom-0 w-full block">
             <div className="min-h-10 items-center flex justify-center text-xl font-extralight"> 
-                &copy; 2024 LWK
+                &copy; 2024 - 2025 LWK
             </div>
         </div>
     )
