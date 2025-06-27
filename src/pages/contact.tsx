@@ -29,18 +29,20 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
           window.onload = renderWidget;
         }
     }, []);
+      
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Turnstile executing...");
-        window.turnstile?.execute(turnstileRef.current);
-        console.log("Turnstile executed");
-        const form = e.target;
-        const data = {
-          email: form.email.value,
-          message: form.message.value,
-        };
+        //console.log("Turnstile executing...");
+        //window.turnstile?.execute(turnstileRef.current);
+        //console.log("Turnstile executed");
         
+        const form = e.target;
+        const formData = new FormData(form);
+        console.log(formData)
+        // Convert FormData to plain object
+        const data = Object.fromEntries(formData.entries());
+        console.log(data)        
         const res = await fetch('https://submit-form.com/aDceOXRPS', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
