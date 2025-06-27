@@ -14,27 +14,25 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
             window.turnstile.render(turnstileRef.current, {
                 sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
                 size: "invisible",
-                callback: (token) => {
+                callback: async (token) => {
                     console.log(token);
                     alert("got token");
                     const form = e.target;
                     const formData = new FormData(form);
-                    console.log(formData)
-                    // Convert FormData to plain object
                     const data = Object.fromEntries(formData.entries());
                     console.log(data)        
                     const res = await fetch('https://submit-form.com/aDceOXRPS', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
-                });
-                
-                if (res.ok) {
-                  alert("ok")
-                } else {
-                  alert('not ok');
-                }
-              },
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                    });
+                    
+                    if (res.ok) {
+                        alert("ok")
+                    } else {
+                        alert('not ok');
+                    }
+                },
             });
         } else {
             alert("Error. Please reload the page.");
