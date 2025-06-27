@@ -1186,6 +1186,10 @@ video {
   background-color: rgb(242 239 241 / var(--tw-bg-opacity, 1));
 }
 
+.brightness-50 {
+  filter: brightness(0.5);
+}
+
 .object-cover {
   object-fit: cover;
 }
