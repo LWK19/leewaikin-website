@@ -23,7 +23,10 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                     console.log(data)        
                     const res = await fetch('https://submit-form.com/aDceOXRPS', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json",
+                        },
                         body: JSON.stringify(data),
                     });
                     
