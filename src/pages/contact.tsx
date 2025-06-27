@@ -10,13 +10,13 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
     const [submitting, setSubmitting] = React.useState(false);
 
     const handleSubmit = async (e) => {
+        setSubmitting(true);
         e.preventDefault();
         if (window.turnstile && turnstileRef.current) {
             window.turnstile.render(turnstileRef.current, {
                 sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
                 size: "invisible",
                 callback: async (token) => {
-                    setSubmitting(true);
                     const form = e.target;
                     const formData = new FormData(form);
                     const data = Object.fromEntries(formData.entries());
@@ -39,6 +39,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
             });
         } else {
             alert("Error. Please reload the page.");
+            setSubmitting(false);
         }
         
     };
@@ -85,7 +86,7 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                         </div>
                         <div ref={turnstileRef}></div>
                         <div className="mt-10">
-                            <T.Button className={"place-items-center mr-0 " + (submitting ? "brightness-75 cursor-not-allowed" : "hover:brightness-90")}> 
+                            <T.Button className={"place-items-center mr-0 " + (submitting ? "brightness-50 cursor-not-allowed" : "")}> 
                                 <button type="submit" disabled={submitting} > Send </button>    
                             </T.Button>
                         </div>
