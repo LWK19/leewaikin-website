@@ -63,11 +63,6 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                 <T.SectionContent>
                     <form className="w-1/2 max-w-[300px] text-xl" ref={formRef} >
                         <input
-                            type="hidden"
-                            name="_redirect"
-                            value="https://your-website.com/thanks"
-                          />
-                        <input
                             type="checkbox"
                             name="poohplate"
                             style={{ display: 'none' }} 
