@@ -12,36 +12,32 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
         e.preventDefault();
         if (window.turnstile && turnstileRef.current) {
             window.turnstile.render(turnstileRef.current, {
-              sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
-              size: "invisible",
-              callback: (token) => {
-                  console.log(token);
-                  alert("got token");
+                sitekey: "0x4AAAAAABiVNOJwVk6TLWep",
+                size: "invisible",
+                callback: (token) => {
+                    console.log(token);
+                    alert("got token");
+                    const form = e.target;
+                    const formData = new FormData(form);
+                    console.log(formData)
+                    // Convert FormData to plain object
+                    const data = Object.fromEntries(formData.entries());
+                    console.log(data)        
+                    const res = await fetch('https://submit-form.com/aDceOXRPS', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                
+                if (res.ok) {
+                  alert("ok")
+                } else {
+                  alert('not ok');
+                }
               },
             });
-            //console.log("Turnstile executing...");
-            //window.turnstile?.execute(turnstileRef.current);
-            console.log("Turnstile executed");
         } else {
             alert("Error. Please reload the page.");
-        }
-        
-        const form = e.target;
-        const formData = new FormData(form);
-        console.log(formData)
-        // Convert FormData to plain object
-        const data = Object.fromEntries(formData.entries());
-        console.log(data)        
-        const res = await fetch('https://submit-form.com/aDceOXRPS', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-        
-        if (res.ok) {
-          alert("ok")
-        } else {
-          alert('not ok');
         }
     };
 
