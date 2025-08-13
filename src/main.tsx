@@ -1,6 +1,6 @@
 import './main.css';
 import React from 'react';
-import * as T from './template.tsx';
+import * as Layout from './common/layout.tsx';
 import Home from './pages/home.tsx';
 import About from './pages/about.tsx';
 import Contact from './pages/contact.tsx';
@@ -33,16 +33,16 @@ function App() {
   return (
     <div className="bg-bg-main">
       <div className=" text-center bg-bg-main text-white min-h-screen min-w-screen flex flex-col">
-      <T.NavBar/>
-      <T.SideBar/>
+      <Layout.NavBar/>
+      <Layout.SideBar/>
       <SwitchTransition>
         <CSSTransition key={location.pathname} nodeRef={nodeRR.nodeRef} timeout={500} classNames='content' onEnter={scrollTop} unmountOnExit>
           {(state) => (
             <div ref={nodeRR.nodeRef} className='grow flex flex-col'>
-              <T.Content>
-                {currentOutlet}
-              </T.Content>
-              <T.Footer/>
+              <div className="grow items-center flex flex-col">
+                  {currentOutlet}
+              </div>
+              <Layout.Footer/>
             </div>
           )}
           </CSSTransition>
