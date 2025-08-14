@@ -4,7 +4,7 @@ import '../main.css';
 type TimelineProps = {Times:string[], Content:React.ReactNode[]} & React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
 function Timeline(props:TimelineProps){
     return (
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-5 w-3/4 lg:w-1/2 text-xl lg:text-2xl">
             { 
                 props.Content.map((node, index) => (<React.Fragment key={index}>
                     <div className="col-span-1" key={"index"+index}>{props.Times[index]}</div> 

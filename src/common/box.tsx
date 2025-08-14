@@ -11,7 +11,7 @@ export function BoxContainer(props:React.PropsWithChildren<React.HTMLProps<HTMLD
 
 export function Box(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>){
     return (
-        <div className={"w-[400px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 h-full flex " + props.className}>
+        <div className={"w-3/4 lg:w-[400px] rounded-4xl bg-bg-elevate shadow-md shadow-black mb-20 h-full flex " + props.className}>
             {props.children} 
         </div>
     )

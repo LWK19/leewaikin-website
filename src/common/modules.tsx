@@ -3,7 +3,7 @@ import React from 'react';
 type ModuleGradeListProps = {CSModules:string[][], MathModules:string[][], MiscModules:string[][]} & React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
 export default function ModuleGradeList(props:ModuleGradeListProps){
     return (
-        <div className="grid grid-cols-6 justify-self-center">
+        <div className="grid grid-cols-6 justify-self-center text-xs md:text-lg lg:text-2xl">
             <div className="col-span-5 mb-2 text-center">Module</div>
             <div className="col-span-1">Grade</div>
 

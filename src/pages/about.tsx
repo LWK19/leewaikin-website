@@ -28,7 +28,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                 </Page.Title>
                 <Box.BoxContainer>
                     <Box.Box className="flex-col">
-                        <Box.BoxHeader className='h-[250px]'> <img className="rounded-t-4xl object-cover w-full h-full object-[0_-15px]" src={p1} alt="" /> </Box.BoxHeader>
+                        <Box.BoxHeader className='h-[250px]'> <img className="rounded-t-4xl object-cover object-center w-full h-full object-[0_-15px]" src={p1} alt="" /> </Box.BoxHeader>
                         <Box.BoxContent className="mt-5"> I am currently a Year 3 NUS Computer Science student. </Box.BoxContent>
                         <Utils.Button className="" onClick={() => scrollTo("whoami")}> More... </Utils.Button>
                     </Box.Box>
@@ -79,8 +79,21 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
             <Page.Section id="whoami">
                 <Page.SectionHeader> Who am I?</Page.SectionHeader>
                 <Page.SectionContent className="">
-                    <div className="flex flex-row w-3/4">
-                        <div className="w-3/4 text-justify">
+                    <div className="flex flex-row w-3/4 lg:w-3/4">
+                        <div className="lg:w-3/4 text-xl lg:text-2xl lg:text-justify">
+                            <img className="object-contain w-full object-top lg:hidden" src={p2} alt=""/>
+                            <div className="text-4xl lg:text-5xl pt-5 text-center lg:hidden">Lee Wai Kin</div>
+                            <div className="p-5 flex flex-row justify-center items-center gap-5 lg:hidden"> 
+                                <a href="https://linkedin.com/in/leewaikin" target="_blank" rel="noreferrer">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/500px-LinkedIn_logo_initials.png" alt="LinkedIn" width="30" height="30"/>
+                                </a>
+                                <a href="https://github.com/leewaikin19" target="_blank" rel="noreferrer">
+                                    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" className="invert" alt="GitHub" width="30" height="30"/>
+                                </a>
+                                <a href="contact">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" className="invert" alt="Email" width="30" height="30"/>
+                                </a>
+                            </div>
                             I am currently a Year 3 student at the National University of Singapore (NUS), pursuing a Bachelor of Computing (Honours) in Computer Science. My specialisations include Artificial Intelligence, Algorithms and Software Engineering.
                             <div className="h-3" />
                             Having achieved 3 Dean's List awards consecutively, I possess strong academic abilities which are not only grounded in theoretical understanding, but also real-world problem solving skills. 
@@ -91,10 +104,10 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                             <div className="h-3" />
                             In my free time, I enjoy listening to music and dabble in music production.
                         </div>
-                        <div className='w-1/4 pl-5'>
-                            <img className="object-contain w-full  object-top" src={p2} alt=""/>
-                            <div className="text-5xl pt-5">Lee Wai Kin</div>
-                            <div className="p-5 flex flex-row justify-center items-center gap-5"> 
+                        <div className='w-1/4 pl-5 hidden lg:block'>
+                            <img className="object-contain w-full object-top hidden lg:block" src={p2} alt=""/>
+                            <div className="text-5xl pt-5 hidden lg:block">Lee Wai Kin</div>
+                            <div className="p-5 flex-row justify-center items-center gap-5  hidden lg:flex"> 
                                 <a href="https://linkedin.com/in/leewaikin" target="_blank" rel="noreferrer">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/500px-LinkedIn_logo_initials.png" alt="LinkedIn" width="40" height="40"/>
                                 </a>
@@ -105,8 +118,6 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                                     <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" className="invert" alt="Email" width="40" height="40"/>
                                 </a>
                             </div>
-                            
-                            
                         </div>
                     </div>
                     
@@ -117,7 +128,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                 <Page.SectionContent>
                     <Timeline Times={["Present", "2023", "2017"]} Content={[
                         <Page.Paragraph>
-                            <div>National University of Singapore (NUS)</div>
+                            <div className='text-left lg:text-center'>National University of Singapore (NUS)</div>
                             <Page.BulletPoint>
                                 Bachelor of Computing (Honours), Computer Science
                             </Page.BulletPoint>
@@ -126,7 +137,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                             </Page.BulletPoint>
                         </Page.Paragraph>, 
                         <Page.Paragraph>
-                            <div>Anglo-Chinese School (Independent)</div>
+                            <div className='text-left lg:text-center'>Anglo-Chinese School (Independent)</div>
                             <Page.BulletPoint>
                                 Diploma of the International Baccalaureate
                             </Page.BulletPoint>
@@ -138,12 +149,12 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
 
                     <Page.ContentDivider />
 
-                    <div className='w-1/2'>
-                        <div className="text-3xl mt-10 text-left"> National University of Singapore</div>
-                        <div className='text-left'> CGPA: 5.0 / 5.0 (As of AY23/24 Semester 2)</div>
+                    <div className='w-3/4 lg:w-1/2'>
+                        <div className="text-2xl lg:text-3xl mt-10 text-left"> National University of Singapore</div>
+                        <div className='text-left text-xl lg:text-2xl'> CGPA: 5.0 / 5.0 (As of AY23/24 Semester 2)</div>
 
                         <Utils.Collapsible className=" m-0" 
-                            Header={<div className="text-2xl">Modules Taken</div>} 
+                            Header={<div className="text-xl lg:text-2xl">Modules Taken</div>} 
                             Content={<ModuleGradeList 
                                 CSModules={[
                                     ["CS1101S", "Programming Methodology", "A+"],
@@ -187,12 +198,12 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
 
                     <Page.ContentDivider />
 
-                    <div className='w-1/2'>
-                        <div className="text-3xl mt-10 text-left"> Anglo-Chinese School (Independent)</div>
-                        <div className='text-left'> Points: 43/45 </div>
+                    <div className='w-3/4 lg:w-1/2'>
+                        <div className="text-2xl lg:text-3xl mt-10 text-left"> Anglo-Chinese School (Independent)</div>
+                        <div className='text-left text-xl lg:text-2xl'> Points: 43/45 </div>
                         <Utils.Collapsible className=" m-0" 
-                            Header={<div className="text-2xl">Subject Combination</div>} 
-                            Content={<div className="grid grid-cols-5 justify-self-center">
+                            Header={<div className="text-xl lg:text-2xl">Subject Combination</div>} 
+                            Content={<div className="grid grid-cols-5 justify-self-center text-xs md:text-lg lg:text-2xl">
                                 <div className="col-span-4 text-center">Subject</div>
                                 <div className="col-span-1">Grade</div>
                                 <div className="col-span-4 text-left">English A: Language and Literature (SL)
@@ -227,14 +238,16 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                 <Page.SectionHeader> Key Achievements </Page.SectionHeader>
                 <Page.SectionContent>
                     <Utils.Collapsible
-                        Header={<Utils.CustomLink href="https://nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-permanent-residents/asean-undergraduate-scholarship" target="_blank">
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://nus.edu.sg/oam/scholarships/scholarships-for-freshmen-singapore-permanent-residents/asean-undergraduate-scholarship" target="_blank">
                             ASEAN Undergraduate Merit Scholarship
                         </Utils.CustomLink>}
-                        Content={<div className="px-5 pt-5 h-auto text-left" >
+                        Content={<div className="px-5 pt-5 h-auto text-left text-xl lg:text-2xl" >
                             Recipient of the ASEAN Undergraduate Merit Scholarship from 2023-2027.
                         </div>} />
                     <Utils.Collapsible
-                        Header={<Utils.CustomLink href="https://credentials.nus.edu.sg/fd63e521-1866-46dd-b83d-a384e834a703#acc.hwFQzG1D" target="_blank">
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/fd63e521-1866-46dd-b83d-a384e834a703#acc.hwFQzG1D" target="_blank">
                             NUS Dean's List (AY24/25 Semester 2)
                         </Utils.CustomLink>}
                         Content={<div className="p-10">
@@ -243,7 +256,8 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                             </a>
                         </div>} />
                     <Utils.Collapsible
-                        Header={<Utils.CustomLink href="https://credentials.nus.edu.sg/1a660a26-f305-4f01-956a-c95a71ac230a#acc.kzMparqy" target="_blank">
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/1a660a26-f305-4f01-956a-c95a71ac230a#acc.kzMparqy" target="_blank">
                             NUS Dean's List (AY24/25 Semester 1)
                         </Utils.CustomLink>}
                         Content={<div className="p-10">
@@ -252,7 +266,8 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                             </a>
                         </div>} />
                     <Utils.Collapsible
-                        Header={<Utils.CustomLink href="https://credentials.nus.edu.sg/f5dc0f96-4a70-49f0-bbba-6142b765947a#acc.V5SX1WA4" target="_blank">
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/f5dc0f96-4a70-49f0-bbba-6142b765947a#acc.V5SX1WA4" target="_blank">
                             NUS Dean's List (AY23/24 Semester 2)
                         </Utils.CustomLink>}
                         Content={<div className="p-10">

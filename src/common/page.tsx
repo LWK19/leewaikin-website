@@ -3,7 +3,7 @@ import '../main.css';
 
 export function Title(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
-        <div className="pb-5 w-full text-6xl">
+        <div className="pb-5 px-5 w-full text-5xl lg:text-6xl">
             {props.children}
         </div>
     )
@@ -35,7 +35,7 @@ export function SectionContent(props:React.PropsWithChildren<React.HTMLProps<HTM
 
 export function ContentDivider(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     return (
-        <div className={"border-white border-b-[0.2px] w-1/2 h-0 opacity-50 my-10 " + props.className}/>
+        <div className={"border-white border-b-[0.2px] w-3/4 lg:w-1/2 h-0 opacity-50 my-10 " + props.className}/>
     )
 }
 

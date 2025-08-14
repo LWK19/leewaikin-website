@@ -59,10 +59,10 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                             autoComplete="off"
                           />
                         <div className="">
-                            <label className="w-fullblock text-3xl text-white ">
+                            <label className="w-fullblock text-2xl lg:text-3xl text-white ">
                                 Your Email
                             </label>
-                            <div className="mt-2 flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 has-[input:focus-within]:outline has-[input:focus-within]:outline-2 outline-black has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-accent1">
+                            <div className="mt-2 text-lg lg:text-2xl flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 has-[input:focus-within]:outline has-[input:focus-within]:outline-2 outline-black has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-accent1">
                                 <input
                                     id="email"
                                     type="email"
@@ -74,13 +74,13 @@ function Contact(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                             </div>
                         </div>
                         <div className="mt-10">
-                            <label className="block text-3xl text-white ">
+                            <label className="block text-2xl lg:text-3xl text-white ">
                                 Message
                             </label>
                             <textarea
                                 id="inquiry"
                                 placeholder="Enter text here"
-                                className="mt-2 block min-w-0 grow py-1.5 px-3 min-h-[200px] w-full rounded-md text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
+                                className="mt-2 text-lg lg:text-2xl block min-w-0 grow py-1.5 px-3 min-h-[200px] w-full rounded-md text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0"
                                 name="inquiry"
                                 required={true}
                             />

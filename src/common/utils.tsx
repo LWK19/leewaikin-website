@@ -4,7 +4,7 @@ import '../main.css';
 
 export function CustomLink(props:React.PropsWithChildren<React.HTMLProps<HTMLAnchorElement>>){
     return (
-        <Link to={props.href!} className="group inline-block" onClick={props.onClick!} viewTransition target={props.target}> 
+        <Link to={props.href!} className={"group inline-block " + props.className} onClick={props.onClick!} viewTransition target={props.target}> 
             {props.children} 
             <span className="block w-0 group-hover:w-full transition-all h-0.5 bg-white"/>
         </Link>

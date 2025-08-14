@@ -53,26 +53,26 @@ export function SideBar(props:React.PropsWithChildren<React.HTMLProps<HTMLDivEle
                 <button className="text-3xl p-5 flex " id="sidebar-hamburger" onClick={revealSideBar}> <i className="material-icons text-3xl pr-2">menu</i> Menu</button>
             </div>
             <div className="transition-[width] ease-in-out bg-black fixed top-0 h-full w-0 block overflow-hidden text-nowrap" id="sidebar">
-                <div className="flex flex-col items-center text-3xl">
+                <div className="flex flex-col items-center text-2xl">
                     <div className="pt-5 pb-3">
                         <button onClick={hideSideBar}> 
                         <i className="material-icons text-5xl">close</i>
                          </button>
                     </div>
                     <hr className='w-full bg-white'/>
-                    <div className="text-5xl py-10 grow">
+                    <div className="text-4xl py-8 grow">
                         <CustomLink href="./" onClick={hideSideBar}> Lee Wai Kin </CustomLink>
                     </div>
-                    <div className="py-6">
+                    <div className="py-3">
                         <CustomLink href="./about" onClick={hideSideBar}> About Me </CustomLink>
                     </div>
-                    <div className="py-6">
+                    <div className="py-3">
                         <CustomLink href="./experience" onClick={hideSideBar}> Work Experience </CustomLink>
                     </div>
-                    <div className="py-6">
+                    <div className="py-3">
                         <CustomLink href="./projects" onClick={hideSideBar}> Projects </CustomLink>
                     </div>
-                    <div className="py-6">
+                    <div className="py-3">
                         <CustomLink href="./contact" onClick={hideSideBar}> Contact </CustomLink>
                     </div>
                 </div>
