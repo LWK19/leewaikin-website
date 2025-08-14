@@ -6,12 +6,12 @@ function Timeline(props:TimelineProps){
     return (
         <div className="grid grid-cols-5">
             { 
-                props.Content.map((node, index) => (<>
-                    <div className="col-span-1">{props.Times[index]}</div> 
-                    <div className="col-span-4"></div> 
+                props.Content.map((node, index) => (<React.Fragment key={index}>
+                    <div className="col-span-1" key={"index"+index}>{props.Times[index]}</div> 
+                    <div className="col-span-4" key={"line"+index}></div> 
                     <TimelineLine />
-                    <div className="col-span-4">{node}</div> 
-                </>))
+                    <div className="col-span-4" key={"node"+index}>{node}</div> 
+                </React.Fragment>))
             }
             <div className="col-span-1">{props.Times.at(-1)}</div> 
         </div>

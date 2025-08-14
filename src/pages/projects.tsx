@@ -25,6 +25,10 @@ function Projects(props:React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>
                 </Page.Title>
                 <Page.SectionContent>
                     <Box.BoxContainer> 
+                        <ProjectBox Title="Self-Learning Model for the Game of Gomoku" Description="A paper written for the NUS module CS3263, using Reinforcement Learning (MCTS) and Deep Learning. Contact me for more information." 
+                            Image={tensorflow} Link={() => scrollTo("proj1")} Tags={["AI/ML", "Deep Learning"]}
+                        />
+
                         <ProjectBox Title="Portfolio Website" Description="My personal portfolio website that you are looking at right now." 
                             Image={lwk} Link={() => scrollTo("proj1")} Tags={["SWE","Web Dev"]}
                         />

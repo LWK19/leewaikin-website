@@ -9,6 +9,9 @@ import p1 from "../assets/p1.jpg";
 import p2 from "../assets/p2.jpg";
 import nus from "../assets/nus.png";
 
+//TODO: Add links 
+//TODO: Add CS3263 project
+
 function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) {
     document.title = "About - Lee Wai Kin";
 
@@ -68,7 +71,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                                 "Database", 
                                 "TensorFlow / PyTorch",
                                 "Data Analytics"
-                            ].map((skill, index) => (<Utils.Tag>{skill}</Utils.Tag>))}
+                            ].map((skill, index) => (<Utils.Tag key={index}>{skill}</Utils.Tag>))}
                         </Box.BoxContent>
                     </Box.Box>
                 </Box.BoxContainer>
@@ -88,8 +91,22 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                             <div className="h-3" />
                             In my free time, I enjoy listening to music and dabble in music production.
                         </div>
-                        <div className='w-1/4'>
-                            <img className="object-contain w-full h-full pl-5 object-top" src={p2} alt=""/>
+                        <div className='w-1/4 pl-5'>
+                            <img className="object-contain w-full  object-top" src={p2} alt=""/>
+                            <div className="text-5xl pt-5">Lee Wai Kin</div>
+                            <div className="p-5 flex flex-row justify-center items-center gap-5"> 
+                                <a href="https://linkedin.com/in/leewaikin" target="_blank" rel="noreferrer">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/500px-LinkedIn_logo_initials.png" alt="LinkedIn" width="40" height="40"/>
+                                </a>
+                                <a href="https://github.com/leewaikin19" target="_blank" rel="noreferrer">
+                                    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" className="invert" alt="GitHub" width="40" height="40"/>
+                                </a>
+                                <a href="contact">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" className="invert" alt="Email" width="40" height="40"/>
+                                </a>
+                            </div>
+                            
+                            
                         </div>
                     </div>
                     
