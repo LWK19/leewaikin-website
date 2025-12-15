@@ -275,6 +275,16 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                                 <img className="m-auto" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/105927835" alt="" />
                             </a>
                         </div>} />
+                    <Utils.Collapsible
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/5fa85c35-10bb-421a-9235-e5f721abdc1d#acc.5xqQuTyF" target="_blank">
+                            NUS Honour List of Student Tutors (AY24/25)
+                        </Utils.CustomLink>}
+                        Content={<div className="p-10">
+                            <a href="https://credentials.nus.edu.sg/5fa85c35-10bb-421a-9235-e5f721abdc1d#acc.5xqQuTyF" target="_blank" rel="noreferrer">
+                                <img className="m-auto" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/168916072" alt=""/>
+                            </a>
+                        </div>} />
                 </Page.SectionContent>
             </Page.Section>
         </>
