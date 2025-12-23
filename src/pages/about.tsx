@@ -167,11 +167,11 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                                     ["CS2106", "Introduction to Operating Systems", "A"],
                                     ["CS2109S", "Introduction to AI and Machine Learning", "A"],
                                     ["CS3230", "Design and Analysis of Algorithms", "A"],
-                                    ["CS3231", "Theory of Computation", "TBC"],
+                                    ["CS3231", "Theory of Computation", "A"],
                                     ["CS3263", "Foundations of Artificial Intelligence", "A"],
-                                    ["CS4211", "Formal Methods of Software Engineering", "TBC"],
-                                    ["CS4234", "Optimisation Algorithms", "TBC"],
-                                    ["CS4246", "AI Planning and Decision Making", "TBC"]
+                                    ["CS4211", "Formal Methods of Software Engineering", "A"],
+                                    ["CS4234", "Optimisation Algorithms", "A-"],
+                                    ["CS4246", "AI Planning and Decision Making", "A"]
                                     ]}
                                 MathModules={[
                                     ["MA1521", "Calculus for Computing", "S"],
@@ -188,7 +188,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                                     ["HSI1000", "How Science Works, Why Science Works", "A"],
                                     ["IS1108", "Digital Ethics and Data Privacy", "A"],
                                     ["IS2218", "Digital Platforms for Business", "S"],
-                                    ["LAJ2203", "Japanese 3", "TBC"],
+                                    ["LAJ2203", "Japanese 3", "A-"],
                                     ["MUA1166", "Introduction to Computing Media in Max", "A"],
                                     
                                 ]}
