@@ -133,7 +133,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                                 Bachelor of Computing (Honours), Computer Science
                             </Page.BulletPoint>
                             <Page.BulletPoint>
-                                CGPA: 4.97 / 5.00 (<i>as of AY24/25 Semester 2</i>)
+                                CGPA: 4.93 / 5.00 (<i>as of AY25/26 Semester 1</i>)
                             </Page.BulletPoint>
                         </Page.Paragraph>, 
                         <Page.Paragraph>
