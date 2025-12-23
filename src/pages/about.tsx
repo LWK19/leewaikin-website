@@ -151,7 +151,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
 
                     <div className='w-3/4 lg:w-1/2'>
                         <div className="text-2xl lg:text-3xl mt-10 text-left"> National University of Singapore</div>
-                        <div className='text-left text-xl lg:text-2xl'> CGPA: 5.0 / 5.0 (As of AY23/24 Semester 2)</div>
+                        <div className='text-left text-xl lg:text-2xl'> CGPA: 4.9 / 5.0 (As of AY25/26 Semester 1)</div>
 
                         <Utils.Collapsible className=" m-0" 
                             Header={<div className="text-xl lg:text-2xl">Modules Taken</div>} 
