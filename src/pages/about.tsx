@@ -96,7 +96,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                             </div>
                             I am currently a Year 3 student at the National University of Singapore (NUS), pursuing a Bachelor of Computing (Honours) in Computer Science. My specialisations include Artificial Intelligence, Algorithms and Software Engineering.
                             <div className="h-3" />
-                            Having achieved 3 Dean's List awards consecutively, I possess strong academic abilities which are not only grounded in theoretical understanding, but also real-world problem solving skills. 
+                            Having achieved 4 Dean's List awards consecutively, I possess strong academic abilities which are not only grounded in theoretical understanding, but also real-world problem solving skills. 
                             <div className="h-3" />
                             Within NUS, I am currently contracted as a part-time Teaching Assistant for several CS coded modules, and was a Student Researcher working on AI models.
                             <div className="h-3" />
@@ -244,6 +244,16 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                         </Utils.CustomLink>}
                         Content={<div className="px-5 pt-5 h-auto text-left text-xl lg:text-2xl" >
                             Recipient of the ASEAN Undergraduate Merit Scholarship from 2023-2027.
+                        </div>} />
+                    <Utils.Collapsible
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/15e1babb-faa4-4669-be4c-539418daa892#acc.cqEQzjfl" target="_blank">
+                            NUS Dean's List (AY25/26 Semester 1)
+                        </Utils.CustomLink>}
+                        Content={<div className="p-10">
+                            <a href="https://credentials.nus.edu.sg/15e1babb-faa4-4669-be4c-539418daa892#acc.cqEQzjfl" target="_blank" rel="noreferrer">
+                                <img className="m-auto" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/170786476" alt=""/>
+                            </a>
                         </div>} />
                     <Utils.Collapsible
                         Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
