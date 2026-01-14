@@ -235,7 +235,7 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                 </Page.SectionContent>
             </Page.Section>
             <Page.Section id="achievements">
-                <Page.SectionHeader> Key Achievements </Page.SectionHeader>
+                <Page.SectionHeader> Key Achievements (NUS) </Page.SectionHeader>
                 <Page.SectionContent>
                     <Utils.Collapsible
                         Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
@@ -244,6 +244,26 @@ function About(props: React.PropsWithChildren<React.HTMLProps<HTMLDivElement>>) 
                         </Utils.CustomLink>}
                         Content={<div className="px-5 pt-5 h-auto text-left text-xl lg:text-2xl" >
                             Recipient of the ASEAN Undergraduate Merit Scholarship from 2023-2027.
+                        </div>} />
+                    <Utils.Collapsible
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/232fd21e-0801-4857-906e-c7bd31fbbb7d#acc.Jgp8yMOt" target="_blank">
+                            Certificate of Distinction (Algorithms and Theory)
+                        </Utils.CustomLink>}
+                        Content={<div className="p-10">
+                            <a href="https://credentials.nus.edu.sg/232fd21e-0801-4857-906e-c7bd31fbbb7d#acc.Jgp8yMOt" target="_blank" rel="noreferrer">
+                                <img className="m-auto" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/171432156" alt=""/>
+                            </a>
+                        </div>} />
+                    <Utils.Collapsible
+                        Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
+                            href="https://credentials.nus.edu.sg/21d4254e-49d5-4494-b128-10f4c251dd7a#acc.jbqVc9zp" target="_blank">
+                            Certificate of Distinction (Artificial Intelligence)
+                        </Utils.CustomLink>}
+                        Content={<div className="p-10">
+                            <a href="https://credentials.nus.edu.sg/21d4254e-49d5-4494-b128-10f4c251dd7a#acc.jbqVc9zp" target="_blank" rel="noreferrer">
+                                <img className="m-auto" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/171431965" alt=""/>
+                            </a>
                         </div>} />
                     <Utils.Collapsible
                         Header={<Utils.CustomLink className="text-2xl lg:text-3xl" 
